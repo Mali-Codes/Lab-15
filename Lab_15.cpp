@@ -38,7 +38,7 @@ int main() {
     movies.reserve(4);
 
     string title, yearStr, writer;
-    while (getline(in, title) && getline(in, yearStr) && getline(in, writer)) {
+    while (getline(in, title) && getline(in, yearStr) && getline(in, writer)) {         // all three have to read true
         Movie tmp;                          // temporary Movie object
         tmp.setTitle(title);
         tmp.setYear(stoi(yearStr));         // convert year string to int (the stoi syntax)
@@ -47,4 +47,10 @@ int main() {
 
         if (movies.size() == 4) break;      // store four records exactlllyyy
     }
+
+    for (const Movie& m : movies) {         // Outputting the contents of the container
+        m.print();
+    }
+
+    return 0;
 }
